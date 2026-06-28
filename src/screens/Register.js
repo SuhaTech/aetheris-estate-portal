@@ -26,7 +26,7 @@ export default function Register() {
 
     try {
       // 2. Real Backend Endpoint call (Apne Node/Express routes ke mutabik url check kar lein)
-      const API_BASE_URL = 'https://aetheris-backend.onrender.com/api';
+      const API_BASE_URL = 'https://aetheris-backend.onrender.com';
       const response = await axios.post(`${API_BASE_URL}/auth/register`, formData);
       
       if (response.status === 201 || response.status === 200) {

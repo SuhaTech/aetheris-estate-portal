@@ -19,7 +19,7 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const API_BASE_URL = 'https://aetheris-backend.onrender.com/api';
+      const API_BASE_URL = 'https://aetheris-backend.onrender.com';
       // 1. Backend login route ko data bheja
       const response = await axios.post(`${API_BASE_URL}/auth/login`, formData);
       
