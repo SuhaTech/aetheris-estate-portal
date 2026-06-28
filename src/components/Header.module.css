@@ -1,0 +1,193 @@
+.topNavbar {
+  height: 90px;
+  background-color: #1e3c72;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.navBrand {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.navBrand h2 {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  margin: 0;
+  color: #ffffff;
+}
+
+.navBrand span {
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: #93c5fd;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.mainNav {
+  height: 100%;
+}
+
+.navLinksRow {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  align-items: center;
+  gap: 25px; /* 🌟 Spacing 35px se 25px ki taaki bade naamo ko right side poori jagah mile */
+}
+
+.navLinksRow li {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #cbd5e1;
+  padding: 35px 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.navLinksRow li::after {
+  content: '';
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.navLinksRow li:hover::after, .activeLink::after {
+  width: 100%;
+}
+
+.navLinksRow li:hover, .activeLink {
+  color: #ffffff !important;
+}
+
+.dropdownTrigger {
+  position: relative;
+}
+
+.arrow {
+  font-size: 7px;
+  margin-left: 6px;
+  vertical-align: middle;
+  color: #93c5fd;
+}
+
+.topDropdownMenu {
+  position: absolute;
+  top: 90px;
+  left: -20px;
+  background-color: #1a365d;
+  width: 240px;
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
+}
+
+.topDropdownMenu li {
+  padding: 14px 24px !important;
+  font-size: 11px !important;
+  color: #bfdbfe !important;
+  letter-spacing: 1.5px;
+}
+
+.topDropdownMenu li:hover {
+  color: #ffffff !important;
+  background-color: #2563eb;
+  padding-left: 28px !important;
+}
+
+/* 🌟 NAV ACTIONS - Right section area lock kiya */
+.navActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+/* 🌟 PROFILE TRIGGER - Height full (100%) ki aur flex alignment set kiya taaki hover na toote */
+.profileDropdownTrigger {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* 🌟 OPERATOR BADGE - White-space nowrap lagaya taaki bada naam ek hi line me rahe aur arrow niche na tute */
+.operatorBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap; /* 💥 Isse naam kabhi breakdown nahi hoga */
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.profileDropdownTrigger:hover .operatorBadge {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 🌟 PROFILE MENU - Iska top 55px se badhakar 90px kiya taaki navbar ke exact end se chipka rahe aur mouse touch break na ho */
+.profileMenu {
+  position: absolute;
+  top: 90px; /* 💥 Ab ye top navbar ke flow ke saath perfectly bina kisi invisible gap ke open hoga */
+  right: 0;
+  background-color: #1a365d;
+  width: 200px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
+}
+
+.profileMenu li {
+  padding: 12px 20px;
+  font-size: 11px;
+  color: #bfdbfe;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.profileMenu li:hover {
+  color: #ffffff;
+  background-color: #2563eb;
+}
+
+.logoutOption {
+  color: #f87171 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 5px;
+}
+
+.logoutOption:hover {
+  background-color: #ef4444 !important;
+  color: #ffffff !important;
+}

@@ -1,0 +1,138 @@
+/* Main container for the home page */
+.homeContainer {
+    text-align: center;
+    padding: 50px;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsoFK3FMN8cSCSJx2qrZf6n1vLA0fBUFOxNw&s');
+    background-size: cover; /* Cover the whole screen */
+    background-position: center;
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    color: #fff; /* White text for better contrast */
+    min-height: 100vh; /* Ensure full viewport height */
+    position: relative; /* To allow pseudo-elements */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif; /* Modern font */
+}
+
+/* Apply a semi-transparent overlay to make text stand out better */
+.homeContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: -1; /* Make sure overlay is behind content */
+}
+
+/* Heading and introductory text styling */
+.homeContainer header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add shadow for better text visibility */
+}
+
+.homeContainer p {
+    font-size: 1.25rem;
+    margin-top: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Shadow for better legibility */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Call-to-action buttons section */
+.ctaButtons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Style for individual call-to-action buttons */
+.ctaButton {
+    color: hsl(211, 100%, 50%);
+    background-color: white;
+    border: none;
+    padding: 14px 30px;
+    margin: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Button shadow */
+    width: 200px; /* Set a fixed width for the buttons */
+}
+
+/* Hover effect for the call-to-action buttons */
+.ctaButton:hover {
+    background-color: #7e91a6;
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+}
+
+/* Focus state for buttons */
+.ctaButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Custom blue focus outline */
+}
+
+/* Footer section styling */
+footer {
+    margin-top: 50px;
+    font-size: 0.875rem;
+    color: #ccc;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Footer links styling (if needed) */
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness - Media Query for Mobile */
+@media (max-width: 768px) {
+    .homeContainer header h1 {
+        font-size: 2.5rem;
+    }
+
+    .homeContainer p {
+        font-size: 1rem;
+    }
+
+    .ctaButtons {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        gap: 15px;
+    }
+
+    .ctaButton {
+        padding: 12px 25px;
+        font-size: 1rem;
+        width: 100%; /* Make buttons take full width on mobile */
+    }
+}
+
+/* Additional media query for smaller screens */
+@media (max-width: 480px) {
+    .homeContainer header h1 {
+        font-size: 2rem;
+    }
+
+    .ctaButton {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,383 @@
+/* ─── GLOBAL PLATFORM DESIGN SYSTEM ─── */
+.premiumLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); /* Subtle premium gradient background */
+  color: #0f172a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.contentArea {
+  flex-grow: 1;
+}
+
+.viewContainer {
+  padding: 60px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.scrollableDashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Elegant Soft Page Dividers */
+.pageDivider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(226,232,240,0) 0%, #cbd5e1 50%, rgba(226,232,240,0) 100%);
+  margin: 90px 0;
+  opacity: 0.8;
+}
+
+/* ─── ULTRA-ATTRACTIVE CENTERED HEADERS WITH LIVE GLOW ─── */
+.sectionCenteredHeader, .sectionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  padding-bottom: 25px; /* Spacing for the expanding neon bar */
+}
+
+/* HIGH-TECH GRADIENT META LABELS */
+.metaLabel {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 5px; /* Wide enterprise spacing */
+  display: inline-block;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #1e3c72, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* CINEMATIC DISPLAY HEADINGS */
+.displayHeading {
+  font-size: 46px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin: 0 0 15px 0;
+  color: #0f172a;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  transition: color 0.3s ease;
+}
+
+/* DYNAMIC HOVER ACCENT LINE EFFECT */
+.sectionCenteredHeader::after, .sectionHeader::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 70px; /* Base compact width */
+  height: 4px;
+  background: linear-gradient(90deg, #1e3c72 0%, #2563eb 50%, #60a5fa 100%);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snappy bounce effect */
+}
+
+/* HEADER HOVER STATE CONTROLS */
+.sectionCenteredHeader:hover::after, .sectionHeader:hover::after {
+  width: 190px; /* Smooth expanding transformation */
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.45); /* High tech ambient light pulse */
+}
+
+.sectionCenteredHeader:hover .displayHeading, .sectionHeader:hover .displayHeading {
+  color: #1e3c72; /* Elegant tint shift on interaction */
+}
+
+.subtext {
+  font-size: 16.5px;
+  color: #64748b;
+  max-width: 720px;
+  line-height: 1.6;
+  margin: 15px auto 0 auto;
+}
+
+/* ─── OVERVIEW METRIC STATS BOXES ─── */
+.premiumGrid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.statBox {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 35px 30px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.03);
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.statBox::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1e3c72, #2563eb);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.statBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+
+.statBox:hover::before {
+  opacity: 1;
+}
+
+.statBox span {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 2px;
+}
+
+.statBox h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 12px 0 0 0;
+  color: #1e3c72;
+}
+
+/* ─── REAL ESTATE IMAGE PORTFOLIO CARDS ─── */
+.premiumGrid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.premiumVisualCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premiumVisualCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 40px -15px rgba(15, 23, 42, 0.12);
+  border-color: #bfdbfe;
+}
+
+.imgBlock {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background-color: #cbd5e1;
+}
+
+.imgBlock img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.premiumVisualCard:hover .imgBlock img {
+  transform: scale(1.04);
+}
+
+.cardTag, .cardTagVacant {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 6px 14px;
+  letter-spacing: 1px;
+  color: white;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.cardTag { background: linear-gradient(135deg, #1e3c72, #2563eb); }
+.cardTagVacant { background: linear-gradient(135deg, #b45309, #d97706); }
+
+.cardInfo { padding: 35px; text-align: left; }
+.cardType { font-size: 11px; font-weight: 700; color: #64748b; letter-spacing: 1.5px; text-transform: uppercase; }
+.cardInfo h3 { margin: 10px 0; font-size: 24px; font-weight: 700; color: #0f172a; letter-spacing: -0.5px; }
+.cardInfo p { margin: 0; color: #475569; font-size: 15px; line-height: 1.6; }
+.cardDivider { height: 1px; background: #f1f5f9; margin: 25px 0; }
+.cardFooterRow { display: flex; justify-content: space-between; align-items: center; }
+.cardPrice { font-size: 18px; font-weight: 800; color: #1e3c72; }
+.statusDot { font-size: 13px; color: #059669; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+
+/* ─── SLEEK ARCHITECTURAL DATA MATRICES (TABLES) ─── */
+.architecturalTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.02);
+}
+
+.architecturalTable th { 
+  background: #f8fafc; 
+  font-size: 11px; 
+  letter-spacing: 2px; 
+  color: #1e3c72; 
+  font-weight: 700; 
+  text-transform: uppercase;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.architecturalTable th, .architecturalTable td { padding: 20px 24px; text-align: left; }
+.architecturalTable tr:last-child td { border-bottom: none; }
+.architecturalTable td { border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 14.5px; }
+.architecturalTable tr:hover td { background-color: #f8fafc; }
+
+.uidText { font-family: 'SFMono-Regular', Consolas, monospace; font-weight: bold; color: #64748b; font-size: 13px; }
+.boldText { font-weight: 600; color: #0f172a; }
+.subDetail { font-size: 12.5px; color: #64748b; margin-top: 3px; }
+
+.okTag, .warningTag { padding: 6px 12px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; border-radius: 6px; }
+.okTag { background: #d1fae5; color: #065f46; }
+.warningTag { background: #fef3c7; color: #92400e; }
+
+/* ─── MAINTENANCE WORK ORDERS GRID ─── */
+.maintenanceSplit {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 45px;
+}
+
+.premiumFormBlock {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.02);
+}
+
+.premiumFormBlock h3, .ticketsContainer h3 { 
+  font-size: 12px; 
+  letter-spacing: 2px; 
+  margin: 0 auto 30px auto; 
+  font-weight: 800; 
+  color: #0f172a; 
+  border-bottom: 2px solid #2563eb; 
+  padding-bottom: 8px; 
+  width: fit-content;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.fieldGroup { margin-bottom: 24px; text-align: left; }
+.fieldGroup label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; color: #475569; }
+
+.fieldGroup input, .fieldGroup select, .fieldGroup textarea { 
+  width: 100%; 
+  padding: 14px 16px; 
+  border: 1px solid #cbd5e1; 
+  border-radius: 8px;
+  outline: none; 
+  background: #ffffff; 
+  font-size: 14px;
+  transition: all 0.2s;
+  color: #0f172a;
+}
+.fieldGroup input:focus, .fieldGroup select:focus, .fieldGroup textarea:focus { 
+  border-color: #2563eb; 
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.solidActionBtn {
+  width: 100%; 
+  padding: 16px; 
+  background: linear-gradient(135deg, #1e3c72 0%, #2563eb 100%);
+  color: #ffffff; 
+  font-size: 12px; 
+  font-weight: 700; 
+  letter-spacing: 2px; 
+  border: none; 
+  border-radius: 8px;
+  cursor: pointer; 
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  transition: all 0.2s ease;
+}
+.solidActionBtn:hover { 
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+  background: linear-gradient(135deg, #1d3565 0%, #1d4ed8 100%);
+}
+
+.incidentRow {
+  background: #ffffff; 
+  border: 1px solid #e2e8f0; 
+  border-radius: 12px;
+  padding: 24px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 18px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.01);
+  transition: all 0.2s;
+}
+.incidentRow:hover {
+  border-color: #cbd5e1;
+  transform: translateX(3px);
+}
+.incidentRow h4 { margin: 0 0 6px 0; font-size: 17px; font-weight: 700; color: #0f172a; }
+.incidentRow span { font-size: 12.5px; color: #64748b; }
+.statusLayoutSide { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.priorityIndicator { font-size: 10px; font-weight: bold; color: #ef4444; background: #fee2e2; padding: 3px 8px; border-radius: 4px; }
+.statusLabel { font-size: 11px; font-weight: 700; color: #1e3c72; border: 1px solid #cbd5e1; padding: 4px 12px; border-radius: 6px; background: #f8fafc; }
+
+/* ─── FINANCIAL INVOICING STACK ─── */
+.ledgerStack { display: flex; flex-direction: column; gap: 18px; }
+.ledgerRow {
+  background: #ffffff; 
+  border: 1px solid #e2e8f0; 
+  border-radius: 14px;
+  padding: 30px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.01);
+  transition: border 0.2s;
+}
+.ledgerRow:hover { border-color: #cbd5e1; }
+.invoiceUid { font-size: 11px; font-family: monospace; color: #94a3b8; display: block; margin-bottom: 6px; letter-spacing: 0.5px; }
+.ledgerRow h4 { margin: 0; font-size: 19px; font-weight: 700; color: #0f172a; }
+.ledgerRightSide { display: flex; align-items: center; gap: 25px; }
+.ledgerRightSide h2 { margin: 0; font-size: 26px; font-weight: 800; color: #1e3c72; }
+.paidBadge, .unpaidBadge { padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: 1px; border-radius: 6px; }
+.paidBadge { background: #d1fae5; color: #065f46; }
+.unpaidBadge { background: #fee2e2; color: #991b1b; }
+
+/* ─── CONTACT COMMUNICATIONS DECK ─── */
+.contactGrid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; }
+.hqInfoCard { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 40px; text-align: left; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.02); }
+.hqInfoCard h3 { font-size: 19px; font-weight: 700; color: #1e3c72; margin: 0 0 28px 0; letter-spacing: -0.5px; }
+.infoBlock { margin-bottom: 24px; }
+.infoBlock label { display: block; font-size: 10px; font-weight: 700; color: #94a3b8; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase; }
+.infoBlock p { margin: 0; font-size: 15px; color: #334155; font-weight: 500; line-height: 1.5; }
+
+.premiumContactForm { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 45px; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.02); }
+.formRowTwo { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 15px; }
+
+/* CSS Fade-in Choreography */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
